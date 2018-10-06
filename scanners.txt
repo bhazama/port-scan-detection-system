@@ -1,0 +1,22 @@
+
+Procedure:
+The first thing I did was take a look at the ssh.log text file.
+While looking at the file I was able to figure out that it tracked
+the host/destination IP adresses, some type of encrypted text (hashed passwords maybe?),
+port numbers, and the status and type of connection being made. The next step was to count
+the number of scans being made. This was stored in a variable called scan_count and was 
+then written to the scanner_found.txt file. Afterwards, the host ip addresses were stored into
+ a list called origin_ip and tthe destination ip addresses were stored in a list called destination_ip.
+ Each list was looped through and appended the host/destination ip's data to the scanners_found file. 
+ The end result was a scanners_found.txt file that contains the number of scans, host ip addresses,
+ and destination ip addresses.
+
+Summary:
+From my log analysis I was able to find out how many scans were attempted
+on various networks as well as the host IP's and destination IP's that each
+host IP was trying to connect to.
+
+Recommendations:
+The next step for the log would be to sort the scans made through Nmap and further investigate those files
+to see if any successful connections were made that could compromise the network. Also, it may be a good idea
+to count the number of scans made by each host ip address and further investigate the ip's with the most scans.
